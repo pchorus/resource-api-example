@@ -12,14 +12,15 @@ import {RouterLink} from "@angular/router";
       @for (character of people; track character.id) {
         <li>
           <p>{{ character.name }}</p>
+          <span>Link to details page via</span>
           <a [routerLink]="['observables', character.id]">observables</a>
           <a [routerLink]="['signals', character.id]">signals</a>
           <a [routerLink]="['resource-api', character.id]">resource api</a>
         </li>
       }
     </ul>
-
-  `
+  `,
+  styles: 'a, span { margin-right: 10px; }'
 })
 export class CharacterListComponent {
   protected readonly people = [
